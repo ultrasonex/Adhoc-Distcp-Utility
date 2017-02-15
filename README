@@ -1,0 +1,7 @@
+Running the Adhoc Distcp Utility
+=================================
+Run the below command as HDFS user to start the utility. 
+
+The utility run at http://ebdp-avdc-d005p.sys.comcast.net:8001/
+
+nohup python AdhocDistcp.py > AdhocDistcp.log 2>&1 &
