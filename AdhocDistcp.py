@@ -41,8 +41,8 @@ def init_db():
 
 def createAndRunDistcp(source, destination):
     distcp = """nohup hadoop distcp -Dmapreduce.map.maxattempts=999 -Dmapreduce.map.memory.mb=8192 -Dyarn.scheduler.minimum-allocation-mb=8192 -Dmapreduce.map.java.opts.max.heap=-Xmx8192  -Dmapreduce.job.queuename=root.Two -update -delete -p -i -m 100 -bandwidth 4"""
-    meld=""" hdfs://comcastprodcluster"""
-    ice=""" hdfs://comcasticeprod"""
+    meld=""" hdfs://sourcenamenodenamespaceid"""
+    ice=""" hdfs://destnamenodenamespaceid"""
     output = """/home/distcppython/logs/distcp_""" + str(int(time.time()))
     backend = """ 2>&1 & """
 
@@ -142,5 +142,5 @@ def logout():
 
 
 if __name__ == "__main__":
-    app.run(host='ebdp-avdc-d005p.sys.comcast.net', port=8001)
+    app.run(host='hostname', port=8001)
 
